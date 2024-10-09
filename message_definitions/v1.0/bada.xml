@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<mavlink>
+  <!-- MAVLink standard messages -->
+  <include>common.xml</include>
+  <dialect>0</dialect>
+  <messages>
+    <message id="13900" name="PX4_TO_PLC">
+      <description>PX4 to PLC commands</description>
+      <field type="uint16_t" name="engine_thrust_power" minValue="0" maxValue="100">Engine Thrust Power Command. Engine Thrust percent </field>
+      <field type="uint16_t" name="clutch">Clutch Command. 0 = Neutral(N), 1 = Drive(D), 2 = Reverse(R) </field>
+      <field type="uint16_t" name="steering_angle" minValue="0" maxValue="600">Steering Angle Command. 0~600 range (-30 ~ 30 degree) </field>
+      <field type="uint16_t" name="engine_trim_angle" minValue="0" maxValue="50">Engine Trim Angle Command. 0~500 range(0 ~ 50 degree)</field>
+      <field type="uint16_t" name="engine_ignition">Engine Ignition Command. 0 = Engine Stop, 1 = Engien Start</field>
+    <field type="uint16_t" name="bow_thruster_power" minValue="0" maxValue="100">Bow Thruster Power Command. </field>
+    <field type="uint16_t" name="bow_thruster_rev">Bow Thruster Revolution Command. 0 = Stop, 1 = Rright Rotation, 2 = Reverse Rotation </field>
+    </message>
+    <message id="13901" name="PLC_TO_PX4">
+      <description>PLC to PX4 commands</description>
+      <field type="uint16_t" name="autonomy_control_status">Autonomy Control Status. 0 = Manned, 1 = Unmanned, 2 = Auto, 4 = RC</field>
+      <field type="uint16_t" name="engine_rpm_status">Engine RPM Status. RPM. 0 ~ 4000 range RPM </field>
+      <field type="uint16_t" name="clutch_status">Clutch Status. 0 = Neutral(N), 1 = Drive(D), 2 = Reverse(R) </field>
+      <field type="uint16_t" name="steering_angle_status">Steering Angle Status. 0 ~ 600 range. (-30 ~ 30 degree) </field>
+      <field type="uint16_t" name="engine_trim_angle_status">Engine Trim Angle Status. 0 ~ 500 range </field>
+      <field type="uint16_t" name="engine_running_status">Engine Running Status</field>
+      <field type="uint16_t" name="bow_thruster_power_status">Engine Ignition Command</field>
+      <field type="uint16_t" name="bow_thruster_revolution_status">Bow Thruster Revolution Status</field>    
+    </message>
+  </messages>
+</mavlink>
